@@ -12,15 +12,15 @@ module OmniAuth
       }
 
       uid do
-        raw_info['url'].split('/').last.to_i
+        raw_info['user']['url'].split('/').last.to_i
       end
 
       info do
         {
-          'email' => raw_info['email'],
-          'first_name' => raw_info['first_name'],
-          'last_name' => raw_info['last_name'],
-          'url' => raw_info['url']
+          'email' => raw_info['user']['email'],
+          'first_name' => raw_info['user']['first_name'],
+          'last_name' => raw_info['user']['last_name'],
+          'url' => raw_info['user']['url']
         }
       end
 
